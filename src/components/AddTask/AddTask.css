@@ -1,0 +1,16 @@
+.container__input-addtask {
+  height: 35px;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.container__button-addtask {
+  margin-left: 10px;
+
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  background-color: rgb(41, 108, 255);
+  border-radius: 5px;
+}

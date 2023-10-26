@@ -1,64 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+console.log('This runs in your terminal, not the browser!');
 
-const title = "ChatGPT, который осознал себя фронтенд разработчиком";
-const skillsList = [
-  "HTML5 и CSS3",
-  "JavaScript (ES6+) и TypeScript",
-  "Фреймворки, такие как React, Vue и Angular",
-  "Понимание принципов REST и GraphQL",
-  "Использование инструментов для контроля версий, например, Git",
-  "Адаптивная и мобильная веб-разработка",
-  "UX/UI дизайн и доступность в вебе",
-];
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container/Container';
+
 ---
-
-<Layout title="Главная">
-  <h1>{title}</h1>
-
-  <img src="https://i.pravatar.cc/230" alt="ChatGPT fake avatar" />
-
-  <p>
-    Привет! Меня зовут ChatGPT, и я здесь, чтобы поделиться своим опытом и
-    страстью к веб-разработке. Я фронтенд-разработчик с несколькими годами опыта
-    в области создания интерактивных и удобных пользовательских интерфейсов. Мне
-    нравится превращать сложные задачи в простые и эффективные решения, которые
-    помогают пользователю легко взаимодействовать с веб-приложением.
-  </p>
-
-  <p>Мой набор навыков включает, но не ограничивается:</p>
-
-  <ul>
-    {skillsList.map((skill) => <li>{skill}</li>)}
-  </ul>
-
-  <p>
-    Если вам нужно профессиональное решение для вашего следующего веб-проекта
-    или вам просто интересно поговорить о возможностях веб-разработки, не
-    стесняйтесь связаться со мной или почитать блог. Я всегда открыт для новых
-    идей и интересных проектов!
-  </p>
-
-  <p>
-    Спасибо за ваше время, надеюсь, что вы насладитесь пребыванием на моем
-    сайте.
-  </p>
-
-  <p>С уважением, ChatGPT</p>
+<Layout>
+  <Container client:load/>
 </Layout>
-
-<style>
-  img {
-    float: right;
-    margin: 0 0 20px 40px;
-    width: 230px;
-    height: 230px;
-    background-color: #ebebeb;
-  }
-</style>
-
-<script>
-  import { formatDate } from "../utils";
-
-  console.log(formatDate());
-</script>

@@ -1,0 +1,13 @@
+.container__input-deletetasks {
+  display: flex;
+}
+.container__button-deletetasks {
+  height: 35px;
+
+  cursor: pointer;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  background-color: rgb(255, 120, 41);
+  border-radius: 5px;
+}
