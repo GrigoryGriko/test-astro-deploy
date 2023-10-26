@@ -1,0 +1,30 @@
+{
+  "name": "chatgpt-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^2.3.0",
+    "@astrojs/react": "^2.2.1",
+    "@astrojs/solid-js": "^2.2.0",
+    "@nanostores/react": "^0.7.1",
+    "@nanostores/solid": "^0.4.2",
+    "@types/react": "^18.2.9",
+    "@types/react-dom": "^18.2.4",
+    "astro": "^2.6.1",
+    "nanostores": "^0.9.1",
+    "react": "^18.2.0",
+    "react-confetti-explosion": "^2.1.2",
+    "react-dom": "^18.2.0",
+    "solid-js": "^1.7.6"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8"
+  }
+}
