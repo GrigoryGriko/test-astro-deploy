@@ -41,8 +41,6 @@ function Container() {
       <DeleteTasks
         list={list}
         setList={setList}
-        isDisabledDelTask={isDisabledDelTask}
-        setIsDisabledDelTask={setIsDisabledDelTask}
       />
       <AddTask 
         list={list}
