@@ -9,7 +9,7 @@ function AddTask(props) {
   const [textTask, setTextTask] = useState('');
   
   const [isDisabled, setIsDisabled] = useState(false);
-  const [isStyleDisabled, setIsStyleDisabled] = useState('');
+  const [isStyleDisabled, setIsStyleDisabled] = useState(' container__button-addtask_disabled');
   const userId = 1;
   
   function handleChange(e) {
