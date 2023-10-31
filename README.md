@@ -2,8 +2,8 @@
 
 Список todo с использованием фреймворка Astro
 
-## Ссылка на приложение
+## Ссылка на запуск веб-приложения
 https://astro-checklist-test.netlify.app/
 
-## Ссылка на Github
+## Ссылка на репозиторий Github
 https://github.com/GrigoryGriko/test-astro-deploy
