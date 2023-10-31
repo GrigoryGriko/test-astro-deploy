@@ -11,3 +11,7 @@
   background-color: rgb(255, 120, 41);
   border-radius: 5px;
 }
+
+.container__input-deletetasks_disabled {
+  background-color: rgb(184, 184, 184);
+}

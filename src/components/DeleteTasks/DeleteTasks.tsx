@@ -5,6 +5,14 @@ import './DeleteTasks.css'
 
 function DeleteTasks(props) {
   const {list, setList} = props;
+  
+  const [isDisabledDelTask, setIsDisabledDelTask] = useState(false);
+  const [styleDisabledDelTask, setStyleDisabledDelTask] = useState(' container__input-deletetasks_disabled');
+
+  
+  function checkElementsCompleted(list) {
+    return list.some(item => item.completed)
+  }
 
   function handleClickDeleteTasks(e) {
     e.preventDefault();
@@ -21,10 +29,20 @@ function DeleteTasks(props) {
       })*/
   }
 
+  useEffect(() => {
+    const isCompleted = checkElementsCompleted(list)
+    setIsDisabledDelTask(!isCompleted)
+
+    isCompleted ? 
+      setStyleDisabledDelTask('') :
+      setStyleDisabledDelTask(' container__input-deletetasks_disabled')
+  }, [list])
+
   return (
     <form className="container__input-deletetasks">
-      <button 
-        className="container__button-deletetasks"
+      <button
+        disabled={isDisabledDelTask}
+        className={`container__button-deletetasks ${styleDisabledDelTask}`}
         onClick={(e) => handleClickDeleteTasks(e)}  
       >
         Удалить завершенные задачи

@@ -16,6 +16,5 @@
 }
 .container__button-addtask_disabled {
   background-color: rgb(112, 112, 112);
-  color: rgb(255, 255, 255);
   cursor: default;
 }
