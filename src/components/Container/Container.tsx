@@ -7,7 +7,8 @@ import DeleteTasks from '../DeleteTasks/DeleteTasks';
 
 function Container() {
   const [list, setList] = useState([]);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabledDeleteTask, setIsDisabledDeleteTask] = useState(false);
+
   //const [maxCountList, setMaxCountList] = useState(10);
 
   /*function listLimiter(list) {
@@ -17,12 +18,17 @@ function Container() {
   useEffect(() => {
     const oldList = JSON.parse(localStorage.getItem("todoList"));
 
+    function checkElementsCompleted(list) {
+      return list.some(item => item.completed)
+    }
 
     if (oldList) {
-      setList(oldList);
+      setIsDisabledDeleteTask(!checkElementsCompleted(oldList))
+      setList(oldList)
     } else {
       api.getTodoList()
       .then((res) => {
+        setIsDisabledDeleteTask(!checkElementsCompleted(res.todos))
         setList(res.todos);
       })
       .catch((err) => {
@@ -42,12 +48,12 @@ function Container() {
       <DeleteTasks
         list={list}
         setList={setList}
+        isDisabledDeleteTask={isDisabledDeleteTask}
+        setIsDisabledDeleteTask={setIsDisabledDeleteTask}
       />
       <AddTask 
         list={list}
         setList={setList}
-        isDisabled={isDisabled}
-        setIsDisabled={setIsDisabled}
       />
 
       {list ? list.map((item, index) => (

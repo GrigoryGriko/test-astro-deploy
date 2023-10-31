@@ -4,9 +4,11 @@ import './AddTask.css'
 
 
 function AddTask(props) {
-  const {list, setList, isDisabled, setIsDisabled} = props;
+  const {list, setList} = props;
 
   const [textTask, setTextTask] = useState('');
+  
+  const [isDisabled, setIsDisabled] = useState(false);
   const [isStyleDisabled, setIsStyleDisabled] = useState('');
   const userId = 1;
   
