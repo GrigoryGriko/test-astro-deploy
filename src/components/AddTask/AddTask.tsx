@@ -4,16 +4,26 @@ import './AddTask.css'
 
 
 function AddTask(props) {
-  const {list, setList} = props;
+  const {list, setList, isDisabled, setIsDisabled} = props;
 
   const [textTask, setTextTask] = useState('');
+  const [isStyleDisabled, setIsStyleDisabled] = useState('');
   const userId = 1;
   
   function handleChange(e) {
     const value = e.target.value;
-
     setTextTask(value)
   }
+
+  useEffect(() => {
+    if (!textTask) {
+      setIsDisabled(true)
+      setIsStyleDisabled(' container__button-addtask_disabled')
+    } else {
+      setIsDisabled(false)
+      setIsStyleDisabled('')
+    }
+  }, [textTask])
 
   function handleClickAddtask(e) {
     e.preventDefault();
@@ -24,6 +34,7 @@ function AddTask(props) {
         newList.push(listData);
 
         setList(newList);
+        setTextTask('')
       })
       .catch((err) => {
         console.log(err)
@@ -38,8 +49,9 @@ function AddTask(props) {
         onChange={(e) => handleChange(e)}
       ></input>
 
-      <button 
-        className="container__button-addtask"
+      <button
+        disabled={isDisabled}
+        className={`container__button-addtask ${isStyleDisabled}`}
         onClick={(e) => handleClickAddtask(e)}  
       >
         Добавить задачу

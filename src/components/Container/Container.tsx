@@ -7,6 +7,7 @@ import DeleteTasks from '../DeleteTasks/DeleteTasks';
 
 function Container() {
   const [list, setList] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(false);
   //const [maxCountList, setMaxCountList] = useState(10);
 
   /*function listLimiter(list) {
@@ -45,6 +46,8 @@ function Container() {
       <AddTask 
         list={list}
         setList={setList}
+        isDisabled={isDisabled}
+        setIsDisabled={setIsDisabled}
       />
 
       {list ? list.map((item, index) => (
